@@ -3,180 +3,169 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Parthkumar Patel Portfolio</title>
+
+<title>Parthkumar Patel | Portfolio</title>
 
 <style>
+
 body {
-    font-family: Arial;
     margin: 0;
-    background: #f5f5f5;
+    font-family: Arial, sans-serif;
+    background: white;
+    color: #333;
 }
 
-header {
-    background: #1f2937;
-    color: white;
-    text-align: center;
-    padding: 40px;
+/* NAVBAR */
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 50px;
+    border-bottom: 1px solid #ddd;
 }
 
-section {
+nav h2 {
+    margin: 0;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 25px;
+}
+
+nav ul li {
+    cursor: pointer;
+    font-weight: bold;
+}
+
+/* HERO SECTION */
+.hero {
     max-width: 1000px;
     margin: auto;
-    padding: 30px;
+    padding: 60px 20px;
 }
 
-.card {
-    background: white;
-    padding: 20px;
-    margin: 20px 0;
-    border-radius: 10px;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+.hero h1 {
+    font-size: 40px;
+    margin-bottom: 10px;
 }
 
-button {
-    background: #2563eb;
-    color: white;
-    border: none;
-    padding: 10px 15px;
-    cursor: pointer;
-    border-radius: 5px;
+.hero h3 {
+    color: #555;
+    margin-bottom: 30px;
 }
 
-.hidden {
-    display: none;
-    margin-top: 15px;
+.hero p {
+    line-height: 1.7;
+    margin-bottom: 20px;
 }
 
-h2 {
+/* SECTION */
+.section {
+    max-width: 1000px;
+    margin: auto;
+    padding: 40px 20px;
+}
+
+.section h2 {
     border-bottom: 2px solid #ddd;
+    padding-bottom: 10px;
+    margin-bottom: 20px;
 }
-</style>
 
-<script>
-function toggleDetails(id) {
-    var x = document.getElementById(id);
-    if (x.style.display === "none") {
-        x.style.display = "block";
-    } else {
-        x.style.display = "none";
-    }
+/* LIST STYLE */
+ul {
+    line-height: 1.8;
 }
-</script>
+
+/* CONTACT */
+.contact a {
+    color: #2563eb;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.contact a:hover {
+    text-decoration: underline;
+}
+
+</style>
 
 </head>
 
 <body>
 
-<header>
-    <h1>Parthkumar Patel</h1>
-    <p>Mechanical Engineering | Design | Validation | Manufacturing</p>
-</header>
+<!-- NAVIGATION -->
+<nav>
+    <h2>Parth Patel</h2>
+    <ul>
+        <li onclick="scrollToSection('home')">Home</li>
+        <li onclick="scrollToSection('experience')">Experience</li>
+        <li onclick="scrollToSection('projects')">Projects</li>
+    </ul>
+</nav>
 
-<section>
-<h2>Experience</h2>
+<!-- INTRO / HOME -->
+<div id="home" class="hero">
+    <h1>About Me</h1>
+    <h2>Parthkumar Patel</h2>
+    <h3>Mechanical Engineering Technologist | Design, Validation & R&D</h3>
 
-<div class="card">
-<h3>Skyjack – Design & Validation Engineering Co-op</h3>
-<p><b>Jan 2025 – May 2025 | Jan 2026 – Apr 2026</b></p>
+    <p>
+        I am a Mechanical Engineering Technology student at Sheridan College with over 4 years of engineering experience 
+        specialized in the design, testing, and optimization of safety-critical systems. My approach combines advanced CAD 
+        mastery with a hands-on validation mindset, ensuring that every design is not only theoretically sound but also 
+        physically durable and manufacturable.
+    </p>
 
-<button onclick="toggleDetails('skyjack')">View Details</button>
+    <p>
+        Currently, I am at Skyjack within the Test and Validation department, where I work on structural validation projects 
+        for Mobile Elevating Work Platforms. My work involves designing custom test bracketry and utilizing Somat eDAQ systems 
+        to analyze real-time performance data—bridging the gap between 3D modeling and real-world machine stability.
+    </p>
 
-<div id="skyjack" class="hidden">
-<ul>
-<li>Redesigned Catch Bar assembly to improve global stability testing flexibility</li>
-<li>Designed custom test brackets for fatigue and performance validation</li>
-<li>Performed tire force testing (500–3000 lb) analyzing stiffness & deformation</li>
-<li>Used eDAQ hardware and Somat software for real-time data acquisition</li>
-<li>Developed automated data processing tool reducing manual effort & errors</li>
-<li>Calibrated sensors and developed validation procedures</li>
-<li>Managed Global Master Tracker & Design Verification Plans (DVP)</li>
-<li>Conducted lab audits and improved equipment tracking system</li>
-</ul>
-</div>
-</div>
+    <h3>My Professional Journey</h3>
+    <ul>
+        <li><b>Design & Validation (Skyjack):</b> Developed automated data processing tools improving reporting speed and accuracy.</li>
+        <li><b>Manufacturing Excellence (Linamar):</b> Designed robotic fixtures and applied GD&T & FMEA in high-volume production.</li>
+        <li><b>Applied Research (CIM):</b> Built P&IDs and prototypes for liquid-liquid extraction systems.</li>
+        <li><b>Safety-Critical Engineering (L&T):</b> Worked on clearance studies, BOM automation, and compliance standards.</li>
+        <li><b>Technical Mentorship:</b> Tutored engineering students in math and electrical fundamentals.</li>
+    </ul>
 
-<div class="card">
-<h3>Linamar – Mechanical Engineering Co-op</h3>
-<p><b>May 2024 – Aug 2024</b></p>
+    <h3>Core Competencies</h3>
+    <ul>
+        <li><b>Software:</b> SolidWorks, AutoCAD, CATIA V5, Creo, ANSYS</li>
+        <li><b>Technical:</b> Structural Validation, DAQ (Somat eDAQ), P&ID, GD&T, FMEA</li>
+        <li><b>Standards:</b> ISO, OACETT, North American Safety Standards</li>
+    </ul>
 
-<button onclick="toggleDetails('linamar')">View Details</button>
-
-<div id="linamar" class="hidden">
-<ul>
-<li>Designed tooling, fixtures, and inspection setups using SolidWorks & AutoCAD</li>
-<li>Developed robotic gripper system for shaft handling applications</li>
-<li>Designed sheet metal drip tray reducing coolant hazards</li>
-<li>Applied GD&T, fits, and tolerances ensuring manufacturability</li>
-<li>Participated in FMEA and Layered Process Audits (LPA)</li>
-<li>Created process flow diagrams and rework procedures</li>
-<li>Coordinated with vendors for tooling quotes and feasibility</li>
-<li>Improved production efficiency through time studies</li>
-</ul>
-</div>
-</div>
-
-<div class="card">
-<h3>Sheridan College – Research Assistant (CIM)</h3>
-<p><b>Sep 2024 – Nov 2024</b></p>
-
-<button onclick="toggleDetails('cim')">View Details</button>
-
-<div id="cim" class="hidden">
-<ul>
-<li>Designed sedimentation tank for liquid-liquid extraction system</li>
-<li>Developed P&ID and system-level process visualization</li>
-<li>Applied fluid mechanics to improve separation efficiency</li>
-<li>Built and tested prototype system</li>
-<li>Collaborated with industry engineers and academic supervisors</li>
-<li>Documented design iterations and experimental findings</li>
-</ul>
-</div>
+    <div class="contact">
+        <p>Email: <a href="mailto:parthpatel1327@gmail.com">parthpatel1327@gmail.com</a></p>
+        <p>LinkedIn: <a href="https://www.linkedin.com/in/parthkumarpatel98/" target="_blank">View Profile</a></p>
+    </div>
 </div>
 
-<div class="card">
-<h3>Sheridan College – Program Tutor</h3>
-<p><b>2023 – 2025 (Multiple Terms)</b></p>
-
-<button onclick="toggleDetails('tutor')">View Details</button>
-
-<div id="tutor" class="hidden">
-<ul>
-<li>Delivered tutoring in Applied Math & Electrical fundamentals</li>
-<li>Explained concepts like algebra, circuits, and problem-solving techniques</li>
-<li>Developed lesson plans and tutorial materials</li>
-<li>Conducted group sessions and 1-on-1 mentoring</li>
-<li>Improved student performance and engagement</li>
-</ul>
-</div>
+<!-- EXPERIENCE (placeholder for now) -->
+<div id="experience" class="section">
+    <h2>Experience</h2>
+    <p>Detailed experience will be added in the next step.</p>
 </div>
 
-</section>
-
-<section>
-<h2>Skills</h2>
-<div class="card">
-<p><b>CAD:</b> SolidWorks, AutoCAD, CATIA, Creo</p>
-<p><b>Analysis:</b> ANSYS, FEA, tolerance analysis</p>
-<p><b>Automation:</b> PLC, Ladder Logic</p>
-<p><b>Engineering:</b> GD&T, FMEA, Root Cause Analysis</p>
+<!-- PROJECTS (placeholder) -->
+<div id="projects" class="section">
+    <h2>Projects</h2>
+    <p>Projects section coming soon.</p>
 </div>
-</section>
 
-<section>
-<h2>Education</h2>
-<div class="card">
-<p>Sheridan College – Mechanical Engineering Technology (2023–2026)</p>
-<p>MS University of Baroda – Diploma in Mechanical Engineering</p>
-</div>
-</section>
-
-<section>
-<h2>Contact</h2>
-<div class="card">
-<p>Email: parthpatel1327@gmail.com</p>
-<p>LinkedIn: linkedin.com/in/parthkumarpatel98</p>
-</div>
-</section>
+<script>
+function scrollToSection(id) {
+    document.getElementById(id).scrollIntoView({
+        behavior: 'smooth'
+    });
+}
+</script>
 
 </body>
 </html>
