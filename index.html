@@ -1,61 +1,68 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Parthkumar Patel | Mechanical Engineer</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Parthkumar Patel Portfolio</title>
 
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            background: #f4f4f4;
-            color: #333;
-        }
+<style>
+body {
+    font-family: Arial;
+    margin: 0;
+    background: #f5f5f5;
+}
 
-        header {
-            background: #222;
-            color: white;
-            text-align: center;
-            padding: 30px;
-        }
+header {
+    background: #1f2937;
+    color: white;
+    text-align: center;
+    padding: 40px;
+}
 
-        section {
-            padding: 30px;
-            max-width: 900px;
-            margin: auto;
-        }
+section {
+    max-width: 1000px;
+    margin: auto;
+    padding: 30px;
+}
 
-        h2 {
-            border-bottom: 2px solid #ccc;
-            padding-bottom: 5px;
-        }
+.card {
+    background: white;
+    padding: 20px;
+    margin: 20px 0;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
 
-        .card {
-            background: white;
-            padding: 20px;
-            margin: 15px 0;
-            border-radius: 10px;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-        }
+button {
+    background: #2563eb;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    cursor: pointer;
+    border-radius: 5px;
+}
 
-        details {
-            margin-top: 10px;
-            cursor: pointer;
-        }
+.hidden {
+    display: none;
+    margin-top: 15px;
+}
 
-        summary {
-            font-weight: bold;
-            font-size: 16px;
-        }
+h2 {
+    border-bottom: 2px solid #ddd;
+}
+</style>
 
-        footer {
-            text-align: center;
-            padding: 20px;
-            background: #222;
-            color: white;
-        }
-    </style>
+<script>
+function toggleDetails(id) {
+    var x = document.getElementById(id);
+    if (x.style.display === "none") {
+        x.style.display = "block";
+    } else {
+        x.style.display = "none";
+    }
+}
+</script>
+
 </head>
 
 <body>
@@ -66,115 +73,110 @@
 </header>
 
 <section>
-    <h2>About Me</h2>
-    <p>
-        Mechanical Engineering Technology student and OACETT member with 4+ years of experience in 
-        safety-critical product design, manufacturing support, and process improvement. 
-        Skilled in CAD, validation testing, and cross-functional engineering environments.
-    </p>
-</section>
+<h2>Experience</h2>
 
-<section>
-    <h2>Skills</h2>
-    <div class="card">
-        <p><b>CAD:</b> SolidWorks, AutoCAD, CATIA, Creo</p>
-        <p><b>Analysis:</b> ANSYS, FEA, tolerance analysis</p>
-        <p><b>Automation:</b> PLC, Ladder Logic, Sensors</p>
-        <p><b>Engineering:</b> GD&T, FMEA, Root Cause Analysis</p>
-    </div>
-</section>
+<div class="card">
+<h3>Skyjack – Design & Validation Engineering Co-op</h3>
+<p><b>Jan 2025 – May 2025 | Jan 2026 – Apr 2026</b></p>
 
-<section>
-    <h2>Experience</h2>
+<button onclick="toggleDetails('skyjack')">View Details</button>
 
-    <div class="card">
-        <h3>Skyjack – Design & Validation Engineering Co-op</h3>
-        <p>Guelph, ON</p>
+<div id="skyjack" class="hidden">
+<ul>
+<li>Redesigned Catch Bar assembly to improve global stability testing flexibility</li>
+<li>Designed custom test brackets for fatigue and performance validation</li>
+<li>Performed tire force testing (500–3000 lb) analyzing stiffness & deformation</li>
+<li>Used eDAQ hardware and Somat software for real-time data acquisition</li>
+<li>Developed automated data processing tool reducing manual effort & errors</li>
+<li>Calibrated sensors and developed validation procedures</li>
+<li>Managed Global Master Tracker & Design Verification Plans (DVP)</li>
+<li>Conducted lab audits and improved equipment tracking system</li>
+</ul>
+</div>
+</div>
 
-        <details>
-            <summary>View Details</summary>
-            <ul>
-                <li>Redesigned Catch Bar assembly improving stability testing flexibility</li>
-                <li>Designed custom test brackets for fatigue and performance testing</li>
-                <li>Performed tire force testing (500lb–3000lb) for stability analysis</li>
-                <li>Worked with eDAQ & Somat for real-time data acquisition</li>
-                <li>Developed automated data processing tool (reduced manual work)</li>
-                <li>Calibrated sensors and developed validation procedures</li>
-            </ul>
-        </details>
-    </div>
+<div class="card">
+<h3>Linamar – Mechanical Engineering Co-op</h3>
+<p><b>May 2024 – Aug 2024</b></p>
 
-    <div class="card">
-        <h3>Linamar – Mechanical Engineering Co-op</h3>
+<button onclick="toggleDetails('linamar')">View Details</button>
 
-        <details>
-            <summary>View Details</summary>
-            <ul>
-                <li>Designed tooling, fixtures, and inspection setups using SolidWorks</li>
-                <li>Developed gripper system for robotic shaft handling</li>
-                <li>Designed sheet metal drip tray improving safety</li>
-                <li>Applied GD&T and tolerances for manufacturing accuracy</li>
-                <li>Participated in FMEA and Layered Process Audits</li>
-                <li>Created process documentation and work instructions</li>
-            </ul>
-        </details>
-    </div>
+<div id="linamar" class="hidden">
+<ul>
+<li>Designed tooling, fixtures, and inspection setups using SolidWorks & AutoCAD</li>
+<li>Developed robotic gripper system for shaft handling applications</li>
+<li>Designed sheet metal drip tray reducing coolant hazards</li>
+<li>Applied GD&T, fits, and tolerances ensuring manufacturability</li>
+<li>Participated in FMEA and Layered Process Audits (LPA)</li>
+<li>Created process flow diagrams and rework procedures</li>
+<li>Coordinated with vendors for tooling quotes and feasibility</li>
+<li>Improved production efficiency through time studies</li>
+</ul>
+</div>
+</div>
 
-    <div class="card">
-        <h3>Sheridan College – Research Assistant (CIM)</h3>
+<div class="card">
+<h3>Sheridan College – Research Assistant (CIM)</h3>
+<p><b>Sep 2024 – Nov 2024</b></p>
 
-        <details>
-            <summary>View Details</summary>
-            <ul>
-                <li>Designed liquid-liquid extraction sedimentation tank</li>
-                <li>Developed P&ID and prototype system</li>
-                <li>Applied fluid mechanics for separation efficiency</li>
-                <li>Collaborated with industry and academic stakeholders</li>
-            </ul>
-        </details>
-    </div>
+<button onclick="toggleDetails('cim')">View Details</button>
 
-    <div class="card">
-        <h3>Sheridan College – Program Tutor</h3>
+<div id="cim" class="hidden">
+<ul>
+<li>Designed sedimentation tank for liquid-liquid extraction system</li>
+<li>Developed P&ID and system-level process visualization</li>
+<li>Applied fluid mechanics to improve separation efficiency</li>
+<li>Built and tested prototype system</li>
+<li>Collaborated with industry engineers and academic supervisors</li>
+<li>Documented design iterations and experimental findings</li>
+</ul>
+</div>
+</div>
 
-        <details>
-            <summary>View Details</summary>
-            <ul>
-                <li>Taught applied math and electrical fundamentals</li>
-                <li>Improved student problem-solving skills</li>
-                <li>Created structured lesson plans and tutorials</li>
-            </ul>
-        </details>
-    </div>
+<div class="card">
+<h3>Sheridan College – Program Tutor</h3>
+<p><b>2023 – 2025 (Multiple Terms)</b></p>
+
+<button onclick="toggleDetails('tutor')">View Details</button>
+
+<div id="tutor" class="hidden">
+<ul>
+<li>Delivered tutoring in Applied Math & Electrical fundamentals</li>
+<li>Explained concepts like algebra, circuits, and problem-solving techniques</li>
+<li>Developed lesson plans and tutorial materials</li>
+<li>Conducted group sessions and 1-on-1 mentoring</li>
+<li>Improved student performance and engagement</li>
+</ul>
+</div>
+</div>
 
 </section>
 
 <section>
-    <h2>Education</h2>
-    <div class="card">
-        <p><b>Sheridan College</b> – Mechanical Engineering Technology (2023–2026)</p>
-        <p><b>MS University of Baroda</b> – Diploma in Mechanical Engineering</p>
-    </div>
+<h2>Skills</h2>
+<div class="card">
+<p><b>CAD:</b> SolidWorks, AutoCAD, CATIA, Creo</p>
+<p><b>Analysis:</b> ANSYS, FEA, tolerance analysis</p>
+<p><b>Automation:</b> PLC, Ladder Logic</p>
+<p><b>Engineering:</b> GD&T, FMEA, Root Cause Analysis</p>
+</div>
 </section>
 
 <section>
-    <h2>Certifications</h2>
-    <div class="card">
-        <p>CSWP, CSWA, CSWP-SM, CSWP-WD, CSWP-DT</p>
-    </div>
+<h2>Education</h2>
+<div class="card">
+<p>Sheridan College – Mechanical Engineering Technology (2023–2026)</p>
+<p>MS University of Baroda – Diploma in Mechanical Engineering</p>
+</div>
 </section>
 
 <section>
-    <h2>Contact</h2>
-    <div class="card">
-        <p>Email: parthpatel1327@gmail.com</p>
-        <p>LinkedIn: linkedin.com/in/parthkumarpatel98</p>
-    </div>
+<h2>Contact</h2>
+<div class="card">
+<p>Email: parthpatel1327@gmail.com</p>
+<p>LinkedIn: linkedin.com/in/parthkumarpatel98</p>
+</div>
 </section>
-
-<footer>
-    <p>© 2026 Parthkumar Patel</p>
-</footer>
 
 </body>
 </html>
