@@ -7,17 +7,17 @@
 <style>
 body {
     margin: 0;
-    font-family: 'Segoe UI', Arial, sans-serif;
+    font-family: 'Segoe UI', system-ui, Arial, sans-serif;
     background: #f8fafc;
     color: #334155;
 }
 
-/* NAVBAR */
+/* NAVBAR LAYOUT */
 nav {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 20px 50px;
+    padding: 15px 40px;
     background: white;
     border-bottom: 1px solid #e2e8f0;
     position: sticky;
@@ -27,6 +27,7 @@ nav {
 
 nav h2 {
     margin: 0;
+    font-size: 22px;
     color: #0f172a;
 }
 
@@ -42,22 +43,40 @@ nav ul li {
     cursor: pointer;
     font-weight: 600;
     color: #475569;
-    transition: color 0.2s;
+    padding: 8px 12px;
+    border-radius: 6px;
+    transition: all 0.2s ease;
 }
 
 nav ul li:hover {
     color: #2563eb;
+    background: #f1f5f9;
 }
 
-/* HERO SECTION */
-.hero {
+nav ul li.active-tab {
+    color: white;
+    background: #2563eb;
+}
+
+/* WORKSPACE CONTAINER */
+.container {
     max-width: 1000px;
     margin: auto;
-    padding: 80px 20px 40px 20px;
+    padding: 40px 20px;
 }
 
+/* DYNAMIC SWITCHING ARCHITECTURE */
+.portfolio-section {
+    display: none;
+}
+
+.portfolio-section.active-view {
+    display: block;
+}
+
+/* SUMMARY / HERO BRANDING */
 .hero h1 {
-    font-size: 42px;
+    font-size: 40px;
     color: #0f172a;
     margin-bottom: 5px;
 }
@@ -67,13 +86,13 @@ nav ul li:hover {
     margin-top: 5px;
     margin-bottom: 15px;
     font-weight: 500;
+    font-size: 22px;
 }
 
-/* HEADER CONTACT LINKS */
 .header-contact {
     display: flex;
-    gap: 20px;
-    margin-bottom: 35px;
+    gap: 15px;
+    margin-bottom: 30px;
     font-size: 15px;
     font-weight: 500;
 }
@@ -93,46 +112,41 @@ nav ul li:hover {
     margin-bottom: 20px;
 }
 
-/* GENERAL SECTIONS */
-.section {
-    max-width: 1000px;
-    margin: auto;
-    padding: 60px 20px;
-}
-
-.section h2 {
+/* CONTENT CONTAINER DESIGNS */
+.section-headline {
     color: #0f172a;
     border-bottom: 2px solid #e2e8f0;
     padding-bottom: 10px;
     margin-bottom: 30px;
+    font-size: 26px;
 }
 
-/* SKILLS SECTION */
-.skills-container {
+.skills-wrapper {
     background: white;
     padding: 30px;
     border-radius: 8px;
     border: 1px solid #e2e8f0;
-    margin-top: 40px;
 }
 
-.skills-container ul {
+.skills-wrapper ul {
     list-style-type: none;
     padding-left: 0;
+    margin: 0;
 }
 
-.skills-container li {
-    margin-bottom: 15px;
+.skills-wrapper li {
+    margin-bottom: 18px;
     line-height: 1.6;
+    font-size: 15.5px;
 }
 
-/* CARDS FOR EXP & PROJECTS */
+/* CARDS FOR EXPERIENCES & PROJECTS */
 .card {
     background: white;
     padding: 25px;
     border-radius: 8px;
     border: 1px solid #e2e8f0;
-    margin-bottom: 35px;
+    margin-bottom: 25px;
 }
 
 .card-header {
@@ -145,7 +159,7 @@ nav ul li:hover {
 .card-title h3 {
     margin: 0;
     color: #0f172a;
-    font-size: 20px;
+    font-size: 21px;
 }
 
 .card-subtitle {
@@ -161,59 +175,67 @@ nav ul li:hover {
     font-weight: 600;
     white-space: nowrap;
     text-align: right;
+    line-height: 1.5;
 }
 
-.project-meta {
+.meta-info {
     margin-top: 10px;
-    font-size: 14px;
+    font-size: 14.5px;
     color: #64748b;
+    line-height: 1.5;
 }
 
-ul {
+ul.bullet-list {
     padding-left: 20px;
+    margin: 0;
     line-height: 1.8;
 }
 
-li {
+ul.bullet-list li {
     margin-bottom: 8px;
+    font-size: 15px;
 }
 
-/* GALLERY GRID */
+/* DRAWING PLATFORM GALLERY */
 .gallery-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
     gap: 15px;
-    margin-top: 15px;
+    margin-top: 20px;
 }
 
-.gallery-item {
-    background: #f1f5f9;
-    padding: 12px 18px;
+.gallery-card {
+    background: white;
+    padding: 15px 20px;
     border-radius: 6px;
     font-weight: 500;
-    font-size: 15px;
+    font-size: 14.5px;
     color: #475569;
-    border-left: 4px solid #cbd5e1;
+    border-left: 4px solid #2563eb;
+    border-top: 1px solid #e2e8f0;
+    border-right: 1px solid #e2e8f0;
+    border-bottom: 1px solid #e2e8f0;
 }
 
-/* CONTACT FOOTER */
+/* PREMIUM FOOTER */
 .contact-container {
     background: #0f172a;
     color: white;
-    padding: 50px 20px;
+    padding: 40px 20px;
     text-align: center;
     margin-top: 80px;
 }
 
 .contact-container h2 {
     margin-top: 0;
+    font-size: 24px;
 }
 
 .contact-links {
     display: flex;
     justify-content: center;
     gap: 30px;
-    margin-top: 20px;
+    margin-top: 15px;
 }
 
 .contact-links a {
@@ -227,8 +249,8 @@ li {
 }
 
 @media (max-width: 768px) {
-    nav { padding: 20px; flex-direction: column; gap: 15px; }
-    .card-header { flex-direction: column; gap: 5px; }
+    nav { padding: 15px 20px; flex-direction: column; gap: 15px; }
+    .card-header { flex-direction: column; gap: 6px; }
     .card-date { text-align: left; }
     .header-contact { flex-direction: column; gap: 8px; }
 }
@@ -236,87 +258,751 @@ li {
 </head>
 <body>
 
-<!-- NAVIGATION -->
+<!-- NAVIGATION BAR -->
 <nav>
     <h2>Parth Patel</h2>
     <ul>
-        <li onclick="scrollToSection('home')">Home</li>
-        <li onclick="scrollToSection('skills')">Technical Skills</li>
-        <li onclick="scrollToSection('experience')">Professional Experience</li>
-        <li onclick="scrollToSection('projects')">Engineering Projects</li>
+        <li id="tab-home" class="active-tab" onclick="switchView('home')">Home</li>
+        <li id="tab-skills" onclick="switchView('skills')">Technical Skills</li>
+        <li id="tab-experience" onclick="switchView('experience')">Professional Experience</li>
+        <li id="tab-projects" onclick="switchView('projects')">Engineering Projects</li>
     </ul>
 </nav>
 
-<!-- INTRO / HOME -->
-<div id="home" class="hero">
-    <h1>Parthkumar Patel</h1>
-    <h3>Mechanical Engineering Technologist | Design, Validation & R&D</h3>
-    
-    <!-- HIGH-VISIBILITY TOP LINKS -->
-    <div class="header-contact">
-        <span>Email: <a href="mailto:parthpatel1327@gmail.com">parthpatel1327@gmail.com</a></span>
-        <span>•</span>
-        <span>LinkedIn: <a href="https://linkedin.com" target="_blank">View Profile</a></span>
+<div class="container">
+    <!-- 1. HOME TAB VIEW -->
+    <div id="view-home" class="portfolio-section active-view">
+        <div class="hero">
+            <h1>Parthkumar Patel</h1>
+            <h3>Mechanical Engineering Technologist | Design, Validation & R&D</h3>
+            
+            <div class="header-contact">
+                <span>Email: <a href="mailto:parthpatel1327@gmail.com">parthpatel1327@gmail.com</a></span>
+                <span>•</span>
+                <span>LinkedIn: <a href="https://linkedin.com" target="_blank">View Profile</a></span>
+            </div>
+            
+            <p>
+                Mechanical Engineering Technologist with over four years of experience in design engineering, manufacturing, validation testing, and safety-critical systems. Graduate of Sheridan College's Mechanical Engineering Technology – Design & Drafting program, with hands-on experience supporting automotive, industrial equipment, and applied research projects.
+            </p>
+            <p>
+                Experienced in 3D CAD modeling, engineering drawings, GD&T application, design validation, product testing, traceability implementation, and process improvement. Contributed to safety-critical automotive programs at L&T Technology Services, manufacturing engineering initiatives at Linamar, and structural validation projects for Mobile Elevating Work Platforms (MEWPs) at Skyjack.
+            </p>
+            <p>
+                Proficient in SolidWorks, AutoCAD, Windchill, and engineering data acquisition systems, with a strong ability to bridge design concepts with real-world manufacturing and validation requirements. Recognized for applying analytical problem-solving, technical communication, and cross-functional collaboration to deliver practical, reliable, and manufacturable engineering solutions.
+            </p>
+        </div>
     </div>
-    
-    <p>
-        Mechanical Engineering Technologist with over four years of experience in design engineering, manufacturing, validation testing, and safety-critical systems. Graduate of Sheridan College's Mechanical Engineering Technology – Design & Drafting program, with hands-on experience supporting automotive, industrial equipment, and applied research projects.
-    </p>
-    <p>
-        Experienced in 3D CAD modeling, engineering drawings, GD&T application, design validation, product testing, traceability implementation, and process improvement. Contributed to safety-critical automotive programs at L&T Technology Services, manufacturing engineering initiatives at Linamar, and structural validation projects for Mobile Elevating Work Platforms (MEWPs) at Skyjack.
-    </p>
-    <p>
-        Proficient in SolidWorks, AutoCAD, Windchill, and engineering data acquisition systems, with a strong ability to bridge design concepts with real-world manufacturing and validation requirements. Recognized for applying analytical problem-solving, technical communication, and cross-functional collaboration to deliver practical, reliable, and manufacturable engineering solutions.
-    </p>
+
+    <!-- 2. TECHNICAL SKILLS TAB VIEW -->
+    <div id="view-skills" class="portfolio-section">
+        <div class="section-headline">Technical Skills</div>
+        <div class="skills-wrapper">
+            <ul>
+                <li><b>CAD Software & Design Tools:</b> SolidWorks, Creo 4.0, AutoCAD, Catia V5, Inventor, 3Ds Max, Master Cam</li>
+                <li><b>Engineering Methods & Analysis:</b> Geometric Dimensioning & Tolerancing (GD&T), Tolerance Stack-up Analysis, Clearance Studies, Design Verification Plan & Report (DVP&R), Failure Mode and Effects Analysis (FMEA), Root Cause Analysis</li>
+                <li><b>Data Acquisition (DAQ) & Automation:</b> Somat eDAQ Hardware, Somat Infield Software, Automation System Integration, Process Automation Tools</li>
+                <li><b>Quality & Auditing Frameworks:</b> Layered Process Audits (LPA), Compliance Auditing, Component Traceability Systems (QR Code-Based Verification), ISO Standards Compliance, Lab Audits</li>
+                <li><b>Manufacturing & Process Engineering:</b> Piping and Instrumentation Diagrams (P&ID), Bill of Materials (BOM) Validation, Engineering Routing Documents (ERD), Time Studies, Workflow Optimization, Tooling/Fixture Design (V-Blocks, Custom Brackets, Catch Bars), Repair & Rework Procedures</li>
+                <li><b>PLM & Enterprise Platforms (ERP):</b> Windchill, AS400, MobileAsset (Inventory Tool), TutorOcean</li>
+                <li><b>Project Management & Collaboration:</b> MS Project, MS Office Suite, Cross-Functional Team Leadership, Technical Lesson Planning</li>
+            </ul>
+        </div>
+    </div>
+    <!-- 3. PROFESSIONAL EXPERIENCE TAB VIEW -->
+    <div id="view-experience" class="portfolio-section">
+        <div class="section-headline">Professional Experience</div>
+        
+        <!-- Job 1: Skyjack -->
+        <div class="card">
+            <div class="card-header">
+                <div class="card-title">
+                    <h3>Design & Validation Engineering Co-op</h3>
+                    <div class="card-subtitle">SKYJACK | Guelph, ON</div>
+                </div>
+                <div class="card-date">Jan 2025 – May 2025 /<br>Jan 2026 – Apr 2026</div>
+            </div>
+            <ul class="bullet-list">
+                <li>Designed custom test support equipment including stabilizing catch bars for scissor lift MEWPs and specialized brackets used to mount sensors and testing hardware using SolidWorks and TCE.</li>
+                <li>Collected and analyzed real-time structural validation test data using Somat eDAQ hardware and Somat Infield software to evaluate machine stability, system performance, and component durability.</li>
+                <li>Set up and calibrated test equipment, including new angle and displacement sensors, conducted cyclic increment force testing to analyze tire stiffness, and drafted detailed technical Work Instructions to ensure accurate, repeatable validation procedures.</li>
+                <li>Worked cross-functionally with design, manufacturing, and quality teams to develop and fabricate custom test tooling to support structural validation and North American safety standards compliance.</li>
+                <li>Engineered and implemented an automatic data processing tool to streamline Tire Press testing results, eliminating manual processing and significantly reducing lead times for stability reports.</li>
+                <li>Managed the Global Master Tracker and Priority Tracker to provide progress updates and update Design Verification Plans as requested by global engineering management.</li>
+                <li>Conducted monthly laboratory equipment audits and developed a weekly tracking system for tool usage across multi-disciplinary engineering teams to ensure equipment availability and calibration compliance.</li>
+            </ul>
+        </div>
+
+        <!-- Job 2: Linamar -->
+        <div class="card">
+            <div class="card-header">
+                <div class="card-title">
+                    <h3>Mechanical Engineering Co-op</h3>
+                    <div class="card-subtitle">LINAMAR CORPORATION (QUADRAD MFG.) | Guelph, ON</div>
+                </div>
+                <div class="card-date">May 2024 – Aug 2024</div>
+            </div>
+            <ul class="bullet-list">
+                <li>Developed 3D models and detailed 2D engineering drawings using SolidWorks and AutoCAD for manufacturing tools, fixtures, and components in accordance with ISO standards.</li>
+                <li>Designed custom automation components, including grippers and gripper mounts for hobber/shaft applications, alongside sheet metal drip trays to mitigate coolant spillage in robotic cells.</li>
+                <li>Engineered multiple quality inspection fixtures, including V-block based tables, to securely locate cylindrical shafts for repeatable dimensional verification and measurement.</li>
+                <li>Applied strict Geometric Dimensioning & Tolerancing principles, fits, and surface finish specifications to ensure the manufacturability and functional performance of 20MnCr5 steel components.</li>
+                <li>Supported process engineering change requests, participated in Failure Mode and Effects Analysis discussions, and conducted physical Layered Process Audits on the shop floor to verify adherence to standard operating procedures.</li>
+                <li>Coordinated with external vendors and suppliers to obtain quotations for custom tooling, evaluating cost, lead times, and technical feasibility to support procurement decisions.</li>
+                <li>Conducted time studies and workflow optimization to improve cycle times while updating Standard Work Instructions and maintaining revision control of CAD files.</li>
+            </ul>
+        </div>
+
+        <!-- Job 3: L&T -->
+        <div class="card">
+            <div class="card-header">
+                <div class="card-title">
+                    <h3>Associate Engineer</h3>
+                    <div class="card-subtitle">L&T TECHNOLOGY SERVICES LIMITED | Mumbai, India</div>
+                </div>
+                <div class="card-date">Oct 2018 – Dec 2022</div>
+            </div>
+            <ul class="bullet-list">
+                <li>Conducted comprehensive quality compliance audits on over 10,000 safety-critical automotive parts to guarantee thorough component traceability.</li>
+                <li>Validated engineering drawings using Creo 4.0, executing precise Geometric Dimensioning & Tolerancing validations, tolerance stack-up analyses, and clearance studies for high-temperature exhaust systems.</li>
+                <li>Developed Engineering Routing Documents to map out correct assembly sequences, electrical harness paths, and component clamping methods to support efficient manufacturing.</li>
+                <li>Audited and corrected detailed Bill of Materials entries within Windchill PLM and AS400 ERP networks to preserve total engineering data integrity and version control.</li>
+                <li>Verified live manufacturing execution of updated traceability standards and ensured the correct usage of QR code-based tracking systems on the assembly lines.</li>
+                <li>Collaborated with cross-functional teams including design, quality, and supply chain to resolve shop floor bottlenecks and support product compliance verification for global markets.</li>
+                <li>Established new traceability processes and workflows, and trained team members and assembly line operators on inspection procedures and quality requirements.</li>
+            </ul>
+        </div>
+
+        <!-- Job 4: Sheridan Research -->
+        <div class="card">
+            <div class="card-header">
+                <div class="card-title">
+                    <h3>Research Assistant – Liquid-Liquid Extraction Project (NSERC Funded)</h3>
+                    <div class="card-subtitle">SHERIDAN COLLEGE – CENTRE FOR INTELLIGENT MANUFACTURING | Brampton, ON</div>
+                </div>
+                <div class="card-date">Sep 2024 – Nov 2024</div>
+            </div>
+            <ul class="bullet-list">
+                <li>Designed and refined a 3D CAD model of a sedimentation tank system using SolidWorks to improve phase separation efficiency between aqueous and organic fluids.</li>
+                <li>Applied fluid mechanics and mechanical engineering principles to optimize tank geometry, flow paths, and fluid residence time to support effective gravity-based separation.</li>
+                <li>Developed a comprehensive Piping and Instrumentation Diagram representing the full system layout and built a physical prototype model for active performance testing.</li>
+                <li>Interpreted and incorporated basic chemical engineering concepts such as fluid density differences, immiscible fluid behavior, and separation mechanisms into the mechanical design to reduce contamination risks.</li>
+                <li>Participated in regular technical meetings with academic supervisors and engaged with industry partner engineers during monthly reviews to present design concepts and align the prototype with real-world engineering expectations.</li>
+                <li>Maintained structured engineering logs detailing design variations, recorded experimental observations, and documented project methodologies for internal reports and knowledge transfer.</li>
+            </ul>
+        </div>
+
+        <!-- Job 5: Sheridan Tutor -->
+        <div class="card">
+            <div class="card-header">
+                <div class="card-title">
+                    <h3>Peer Library Tutor</h3>
+                    <div class="card-subtitle">SHERIDAN COLLEGE – ILS: LEARNING SERVICES | Oakville, ON</div>
+                </div>
+                <div class="card-date">Aug 2023 – Aug 2025</div>
+            </div>
+            <ul class="bullet-list">
+                <li>Provided targeted, program-specific academic support and course-specific tutoring to student peers across consecutive term contracts.</li>
+                <li>Attended live academic lectures to remain fully aligned with course progression and developed structured lesson plans to lead post-lecture group tutorials.</li>
+                <li>Promoted open tutoring hours within the Learn Well Virtual Communities and managed student booking appointments seamlessly through the TutorOcean platform.</li>
+            </ul>
+        </div>
+    </div>
+    <!-- 4. ENGINEERING PROJECTS TAB VIEW -->
+    <div id="view-projects" class="portfolio-section">
+        <div class="section-headline">Engineering Projects</div>
+        <!-- Project 1: Snow Blower -->
+        <div class="card">
+            <div class="card-header">
+                <div class="card-title">
+                    <h3>Savvy Snow Blower (Robotic Capstone)</h3>
+                </div>
+            </div>
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 12px; margin-bottom: 20px;">
+                <div style="border-radius: 6px; overflow: hidden; border: 1px solid #e2e8f0; height: 180px; background: #ffffff;">
+                    <img src="images/snowblower-chassis.jpg" alt="Savvy Snow Blower Prototype" onclick="openLightbox(this)" style="width: 100%; height: 100%; object-fit: contain; cursor: pointer;">
+                </div>
+                <div style="border-radius: 6px; overflow: hidden; border: 1px solid #e2e8f0; height: 180px; background: #ffffff;">
+                    <img src="images/snowblower-mechanics.jpg" alt="Internal Mechanical Routing" onclick="openLightbox(this)" style="width: 100%; height: 100%; object-fit: contain; cursor: pointer;">
+                </div>
+                <div style="border-radius: 6px; overflow: hidden; border: 1px solid #e2e8f0; height: 180px; background: #ffffff;">
+                    <img src="images/snowblower-control.jpg" alt="Wireless Mobile Control Interface" onclick="openLightbox(this)" style="width: 100%; height: 100%; object-fit: contain; cursor: pointer;">
+                </div>
+            </div>
+            <ul class="bullet-list">
+                <li>Fabricated full structural chassis and protective housing utilizing precision laser-cut clear acrylic panels to allow internal mechanical visual inspection.</li>
+                <li>Integrated, wired, and configured an Arduino microcontroller interface alongside Electronic Speed Controllers (ESCs) and high-torque DC motors.</li>
+                <li>Programmed a dedicated responsive web user interface using HTML/CSS/JavaScript to empower wireless remote vehicle controls via mobile applications.</li>
+                <li>Calibrated complex battery power distribution systems to safely and simultaneously drive vehicle drivetrains and the main snow-throwing auger mechanism.</li>
+            </ul>
+            <div class="meta-info"><b>Objective:</b> Low-cost, fully operational robotic snow blower under $500 CAD featuring wireless web-based control.</div>
+            <div class="meta-info"><b>Tools Used:</b> Arduino IDE (C++), Laser Cutting & Acrylic Fabrication Tools, HTML/CSS/JavaScript, Multimeter, Lab Power Supplies.</div>
+        </div>
+        <!-- Project 2: Suspension -->
+        <div class="card">
+            <div class="card-header">
+                <div class="card-title">
+                    <h3>Automotive Suspension System Design & FEA Analysis</h3>
+                </div>
+            </div>
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 12px; margin-bottom: 20px;">
+                <div style="background: white; border-radius: 6px; overflow: hidden; border: 1px solid #e2e8f0; height: 180px; position: relative;">
+                    <img src="images/suspension-full.jpg" alt="3D Parametric Suspension Assembly" onclick="openLightbox(this)" style="width: 100%; height: 100%; object-fit: contain; cursor: pointer;">
+                    <div style="position: absolute; bottom: 0; left: 0; right: 0; background: rgba(15,23,42,0.75); color: white; font-size: 11px; padding: 4px 8px; font-weight: 500; pointer-events: none;">3D Render Layout</div>
+                </div>
+                <div style="background: white; border-radius: 6px; overflow: hidden; border: 1px solid #e2e8f0; height: 180px; position: relative;">
+                    <img src="images/suspension-kinematics.jpg" alt="DMU Kinematic Motion Trajectory Study" onclick="openLightbox(this)" style="width: 100%; height: 100%; object-fit: contain; cursor: pointer;">
+                    <div style="position: absolute; bottom: 0; left: 0; right: 0; background: rgba(15,23,42,0.75); color: white; font-size: 11px; padding: 4px 8px; font-weight: 500; pointer-events: none;">Kinematics Simulation</div>
+                </div>
+                <div style="background: white; border-radius: 6px; overflow: hidden; border: 1px solid #e2e8f0; height: 180px; position: relative;">
+                    <img src="images/suspension-fea.jpg" alt="Generative Structural FEA Control Arm Validation" onclick="openLightbox(this)" style="width: 100%; height: 100%; object-fit: contain; cursor: pointer;">
+                    <div style="position: absolute; bottom: 0; left: 0; right: 0; background: rgba(15,23,42,0.75); color: white; font-size: 11px; padding: 4px 8px; font-weight: 500; pointer-events: none;">Finite Element Analysis (FEA)</div>
+                </div>
+                <div style="background: white; border-radius: 6px; overflow: hidden; border: 1px solid #e2e8f0; height: 180px; position: relative;">
+                    <img src="images/suspension-bom.jpg" alt="Exploded Assembly Bill of Materials Diagram" onclick="openLightbox(this)" style="width: 100%; height: 100%; object-fit: contain; cursor: pointer;">
+                    <div style="position: absolute; bottom: 0; left: 0; right: 0; background: rgba(15,23,42,0.75); color: white; font-size: 11px; padding: 4px 8px; font-weight: 500; pointer-events: none;">Exploded Assembly Print</div>
+                </div>
+            </div>
+            <ul class="bullet-list">
+                <li>Formulated parametric 3D models of suspension links, steering knuckles, and heavy-duty frame mounting brackets based on target suspension geometries.</li>
+                <li>Conducted Digital Mock-Up (DMU) Kinematics simulations to map travel paths, dynamic camber adjustments, and rolling center shifts.</li>
+                <li>Executed rigorous Finite Element Analysis (FEA) structural validation on critical high-stress parts to confirm reliable yields under loading constraints.</li>
+                <li>Generated manufacturing-ready 2D technical layout prints utilizing strict Geometric Dimensioning and Tolerancing (GD&T) annotations.</li>
+            </ul>
+            <div class="meta-info"><b>Objective:</b> Complete end-to-end parametric design, kinematic simulation, and structural validation of a functional vehicle assembly.</div>
+            <div class="meta-info"><b>Tools Used:</b> CATIA V5 (Part Design, Assembly Design, DMU Kinematics, Generative Structural Analysis).</div>
+        </div>
+             <!-- Project 3: Conveyor Design System -->
+        <div class="card">
+            <div class="card-header">
+                <div class="card-title">
+                    <h3>Industrial Belt Conveyor System Design (30 kW)</h3>
+                </div>
+            </div>
+
+            <!-- ZOOMED-OUT MODEL VIEWPORT CONTAINER WITH CLICK-TO-ZOOM -->
+            <div style="margin-bottom: 20px; border-radius: 6px; overflow: hidden; border: 1px solid #e2e8f0; height: 380px; background: #ffffff;">
+                <img src="images/conveyor-system.jpg" alt="SolidWorks 3D Conveyor Assembly Model" onclick="openLightbox(this)" style="width: 100%; height: 100%; display: block; object-fit: contain; cursor: pointer;" title="Click to view full screen">
+            </div>
+
+            <ul class="bullet-list">
+                <li>Performed detailed material load capacity models and effective tension calculations to support heavy agricultural bulk hauling profiles.</li>
+                <li>Selected industrial belt gradings, optimized belt rubber face thicknesses, and calculated minimum terminal pulley layout diameters.</li>
+                <li>Determined critical structural arrangement geometry variables, including custom multi-tier idler frame intervals and feed transition profiles.</li>
+                <li>Analyzed active dynamic kinematic forces to accurately source motor power capabilities, output torque specs, and gearbox ratios.</li>
+            </ul>
+            <div class="meta-info"><b>Objective:</b> Determine optimal belt capacity, power requirements, tension constraints, and hardware sizes using standard engineering formulas and manufacturer guidelines.</div>
+            <div class="meta-info"><b>Tools Used:</b> SolidWorks, Fenner Dunlop Conveyor Design Engineering Manuals, Analytical Kinematic Calculations.</div>
+        </div>
+
+        <!-- Project 4: Trolley Assembly -->
+        <div class="card">
+            <div class="card-header">
+                <div class="card-title">
+                    <h3>I-Beam Trolley Assembly & Exploded Layout</h3>
+                </div>
+            </div>
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 12px; margin-bottom: 20px;">
+                <div style="background: white; border-radius: 6px; overflow: hidden; border: 1px solid #e2e8f0; height: 200px; position: relative;">
+                    <img src="images/trolley-renders.jpg" alt="Autodesk Inventor 3D Assembly Renders" onclick="openLightbox(this)" style="width: 100%; height: 100%; object-fit: contain; cursor: pointer;">
+                    <div style="position: absolute; bottom: 0; left: 0; right: 0; background: rgba(15,23,42,0.75); color: white; font-size: 11px; padding: 4px 8px; font-weight: 500; pointer-events: none;">3D Assembly Alignment Profiles</div>
+                </div>
+                <div style="background: white; border-radius: 6px; overflow: hidden; border: 1px solid #e2e8f0; height: 200px; position: relative;">
+                    <img src="images/trolley-exploded-print.jpg" alt="2D Exploded Production Drawing with Bill of Materials" onclick="openLightbox(this)" style="width: 100%; height: 100%; object-fit: contain; cursor: pointer;">
+                    <div style="position: absolute; bottom: 0; left: 0; right: 0; background: rgba(15,23,42,0.75); color: white; font-size: 11px; padding: 4px 8px; font-weight: 500; pointer-events: none;">2D Exploded Print & Bill of Materials</div>
+                </div>
+                <div style="background: white; border-radius: 6px; overflow: hidden; border: 1px solid #e2e8f0; height: 200px; position: relative;">
+                    <img src="images/trolley-inventor-ui.jpg" alt="Autodesk Inventor Storyboard Timeline Configuration" onclick="openLightbox(this)" style="width: 100%; height: 100%; object-fit: contain; cursor: pointer;">
+                    <div style="position: absolute; bottom: 0; left: 0; right: 0; background: rgba(15,23,42,0.75); color: white; font-size: 11px; padding: 4px 8px; font-weight: 500; pointer-events: none;">Inventor Presentation Workplace UI</div>
+                </div>
+            </div>
+            <ul class="bullet-list">
+                <li>Translated complex 2D technical drawings of loose components into fully constrained 3D part models using parametric design systems.</li>
+                <li>Applied exact mechanical assembly relationships and joint limits to ensure proper physical tracking performance along the target I-beam path.</li>
+                <li>Generated clean 3D custom fasteners, customized pins, and locking brackets to secure wheel tracking plates safely under structural loading conditions.</li>
+                <li>Created a detailed 2D ballooned assembly drawing with a comprehensive built-in engineering Bill of Materials using Inventor Presentation environments.</li>
+            </ul>
+            <div class="meta-info"><b>Objective:</b> Create a functional 3D model with appropriate assembly constraints and generate technical documentation with exploded views using Inventor presentation toolsets.</div>
+            <div class="meta-info"><b>Tools Used:</b> Autodesk Inventor 2025 (Part Modeling, Assembly, Presentation Storyboards, Drawing Sheets).</div>
+        </div>
+        <!-- Project 5: Reciprocating Saw Dynamic Simulation -->
+        <div class="card">
+            <div class="card-header">
+                <div class="card-title">
+                    <h3>Reciprocating Saw Kinematic & Dynamic Simulation</h3>
+                </div>
+            </div>
+            <div style="margin-bottom: 12px; border-radius: 6px; overflow: hidden; border: 1px solid #e2e8f0; max-height: 340px; background: white;">
+                <img src="images/saw-simulation-ui.jpg" alt="Autodesk Inventor 3D Internal Mechanism Viewport" onclick="openLightbox(this)" style="width: 100%; height: auto; display: block; object-fit: contain; cursor: pointer;">
+            </div>
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 12px; margin-bottom: 20px;">
+                <div style="background: white; border-radius: 6px; overflow: hidden; border: 1px solid #e2e8f0; height: 160px; position: relative;">
+                    <img src="images/saw-graph-modified-contact.jpg" alt="Modified 2D Contact Joint Output Graph" onclick="openLightbox(this)" style="width: 100%; height: 100%; object-fit: contain; cursor: pointer;">
+                    <div style="position: absolute; bottom: 0; left: 0; right: 0; background: rgba(15,23,42,0.75); color: white; font-size: 11px; padding: 4px 8px; font-weight: 500; pointer-events: none;">Modified 2D Contact Graph</div>
+                </div>
+                <div style="background: white; border-radius: 6px; overflow: hidden; border: 1px solid #e2e8f0; height: 160px; position: relative;">
+                    <img src="images/saw-graph-modified-rolling.jpg" alt="Modified Rolling Joint Performance Data" onclick="openLightbox(this)" style="width: 100%; height: 100%; object-fit: contain; cursor: pointer;">
+                    <div style="position: absolute; bottom: 0; left: 0; right: 0; background: rgba(15,23,42,0.75); color: white; font-size: 11px; padding: 4px 8px; font-weight: 500; pointer-events: none;">Modified Rolling Joint Graph</div>
+                </div>
+                <div style="background: white; border-radius: 6px; overflow: hidden; border: 1px solid #e2e8f0; height: 160px; position: relative;">
+                    <img src="images/saw-graph-unmodified-rolling.jpg" alt="Unmodified Rolling Joint Base Graph" onclick="openLightbox(this)" style="width: 100%; height: 100%; object-fit: contain; cursor: pointer;">
+                    <div style="position: absolute; bottom: 0; left: 0; right: 0; background: rgba(15,23,42,0.75); color: white; font-size: 11px; padding: 4px 8px; font-weight: 500; pointer-events: none;">Baseline Rolling Joint Graph</div>
+                </div>
+                <div style="background: white; border-radius: 6px; overflow: hidden; border: 1px solid #e2e8f0; height: 160px; position: relative;">
+                    <img src="images/saw-graph-unmodified-contact.jpg" alt="Unmodified 2D Contact Baseline Analysis" onclick="openLightbox(this)" style="width: 100%; height: 100%; object-fit: contain; cursor: pointer;">
+                    <div style="position: absolute; bottom: 0; left: 0; right: 0; background: rgba(15,23,42,0.75); color: white; font-size: 11px; padding: 4px 8px; font-weight: 500; pointer-events: none;">Baseline 2D Contact Graph</div>
+                </div>
+            </div>
+            <ul class="bullet-list">
+                <li>Configured an advanced Dynamic Simulation environment to convert rotational input torque commands directly into clean linear reciprocating saw trajectories.</li>
+                <li>Mapped exact degrees of freedom across multi-body assemblies using complex constraints, including 2D Contact, Force, and Rolling joint mechanics.</li>
+                <li>Isolated mechanical spring parameter variables to track damping coefficients and systematically mitigate vibrational feedback spikes.</li>
+                <li>Analyzed real-time output kinematic plot graphs to map component behavior differences between unmodified baseline designs and optimized mechanical setups.</li>
+            </ul>
+            <div class="meta-info"><b>Objective:</b> Construct a rigorous mechanical reciprocating motion simulation while troubleshooting mechanical damping and friction constraints to optimize return spring action profiles.</div>
+            <div class="meta-info"><b>Tools Used:</b> Autodesk Inventor 2025 (Dynamic Simulation Environment, Joint Configuration Matrices, Output Graphing Plotter Tools).</div>
+        </div>
+        <!-- Project 6: Portable Drill Mold Design -->
+        <div class="card">
+            <div class="card-header">
+                <div class="card-title">
+                    <h3>Portable Drill Housing Mold Design & Plastic Injection Feasibility</h3>
+                </div>
+            </div>
+            <div style="margin-bottom: 12px; border-radius: 6px; overflow: hidden; border: 1px solid #e2e8f0; max-height: 340px; background: white;">
+                <img src="images/drill-housing-ui.jpg" alt="Autodesk Inventor 3D Drill Casing Model Viewport" onclick="openLightbox(this)" style="width: 100%; height: auto; display: block; object-fit: contain; cursor: pointer;">
+            </div>
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 12px; margin-bottom: 20px;">
+                <div style="background: white; border-radius: 6px; overflow: hidden; border: 1px solid #e2e8f0; height: 180px; position: relative;">
+                    <img src="images/drill-mold-parting.jpg" alt="Mold Parting Surface Generation Workspace" onclick="openLightbox(this)" style="width: 100%; height: 100%; object-fit: contain; cursor: pointer;">
+                    <div style="position: absolute; bottom: 0; left: 0; right: 0; background: rgba(15,23,42,0.75); color: white; font-size: 11px; padding: 4px 8px; font-weight: 500; pointer-events: none;">Parting Line Definition</div>
+                </div>
+                <div style="background: white; border-radius: 6px; overflow: hidden; border: 1px solid #e2e8f0; height: 180px; position: relative;">
+                    <img src="images/drill-mold-core-cavity.jpg" alt="Splitting Core and Cavity Tool Blocks" onclick="openLightbox(this)" style="width: 100%; height: 100%; object-fit: contain; cursor: pointer;">
+                    <div style="position: absolute; bottom: 0; left: 0; right: 0; background: rgba(15,23,42,0.75); color: white; font-size: 11px; padding: 4px 8px; font-weight: 500; pointer-events: none;">Core & Cavity Generation</div>
+                </div>
+                <div style="background: white; border-radius: 6px; overflow: hidden; border: 1px solid #e2e8f0; height: 180px; position: relative;">
+                    <img src="images/drill-mold-assembly.jpg" alt="Complete Custom Mold-Base Structural Assembly" onclick="openLightbox(this)" style="width: 100%; height: 100%; object-fit: contain; cursor: pointer;">
+                    <div style="position: absolute; bottom: 0; left: 0; right: 0; background: rgba(15,23,42,0.75); color: white; font-size: 11px; padding: 4px 8px; font-weight: 500; pointer-events: none;">Complete Mold Base Assembly</div>
+                </div>
+                <div style="background: white; border-radius: 6px; overflow: hidden; border: 1px solid #e2e8f0; height: 180px; position: relative;">
+                    <img src="images/drill-mold-drawing.jpg" alt="2D Tooling Production Print Blueprint Layout" onclick="openLightbox(this)" style="width: 100%; height: 100%; object-fit: contain; cursor: pointer;">
+                    <div style="position: absolute; bottom: 0; left: 0; right: 0; background: rgba(15,23,42,0.75); color: white; font-size: 11px; padding: 4px 8px; font-weight: 500; pointer-events: none;">2D Machining Tooling Drawing</div>
+                </div>
+                <div style="background: white; border-radius: 6px; overflow: hidden; border: 1px solid #e2e8f0; height: 180px; position: relative;">
+                    <img src="images/drill-plastic-flow.jpg" alt="SolidWorks Plastic Cavity Filling Time Heat Map" onclick="openLightbox(this)" style="width: 100%; height: 100%; object-fit: contain; cursor: pointer;">
+                    <div style="position: absolute; bottom: 0; left: 0; right: 0; background: rgba(15,23,42,0.75); color: white; font-size: 11px; padding: 4px 8px; font-weight: 500; pointer-events: none;">Plastic Flow Injection Simulation</div>
+                </div>
+                <div style="background: white; border-radius: 6px; overflow: hidden; border: 1px solid #e2e8f0; height: 180px; position: relative;">
+                    <img src="images/drill-plastic-mesh.jpg" alt="Volumetric Finite Element Flow Meshing Casing" onclick="openLightbox(this)" style="width: 100%; height: 100%; object-fit: contain; cursor: pointer;">
+                    <div style="position: absolute; bottom: 0; left: 0; right: 0; background: rgba(15,23,42,0.75); color: white; font-size: 11px; padding: 4px 8px; font-weight: 500; pointer-events: none;">FEA Boundary Layer Mesh</div>
+                </div>
+            </div>
+            <ul class="bullet-list">
+                <li>Engineered detailed 3D shell part geometries for a portable drill tool casing with complex ergonomic grip features using parametric CAD software.</li>
+                <li>Generated exact manufacturing tooling boundaries by evaluating parting lines, drafting side-core splits, and extracting matching cavity/core mold blocks.</li>
+                <li>Constructed full standard multi-plate mold-base assemblies featuring proper guide pins, locating rings, and integrated cooling channel loops.</li>
+                <li>Executed comprehensive non-linear plastic injection fill simulations within SolidWorks Plastic to map material cooling paths and isolate potential air traps or knit lines.</li>
+                <li>Generated complete multi-view 2D engineering drawings and tooling prints with advanced section break dimensions to support high-volume shop floor machining operations.</li>
+            </ul>
+            <div class="meta-info"><b>Objective:</b> Design and evaluate the high-volume mass production manufacturing feasibility of a custom portable drill casing model using advanced injection tooling workflows.</div>
+            <div class="meta-info"><b>Tools Used:</b> Autodesk Inventor 2025 (Mold Design Workspace, Assembly Modeling), SolidWorks Plastic (Injection Fluid FEA, Volumetric Meshing Tools).</div>
+        </div>
+        <!-- Project 7: 3D Plant Model -->
+        <div class="card">
+            <div class="card-header">
+                <div class="card-title">
+                    <h3>3D Plant Industrial Piping & Equipment Layout</h3>
+                </div>
+                <div class="card-date">Duration: 4 months</div>
+            </div>
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 12px; margin-bottom: 20px;">
+                <div style="background: white; border-radius: 6px; overflow: hidden; border: 1px solid #e2e8f0; height: 210px; position: relative;">
+                    <img src="images/plant-model-view1.jpg" alt="CATIA V5 3D Plant Model Left Angle View" onclick="openLightbox(this)" style="width: 100%; height: 100%; object-fit: contain; cursor: pointer;">
+                    <div style="position: absolute; bottom: 0; left: 0; right: 0; background: rgba(15,23,42,0.75); color: white; font-size: 11px; padding: 4px 8px; font-weight: 500; pointer-events: none;">Isometric Routing profile - View A</div>
+                </div>
+                <div style="background: white; border-radius: 6px; overflow: hidden; border: 1px solid #e2e8f0; height: 210px; position: relative;">
+                    <img src="images/plant-model-view2.jpg" alt="CATIA V5 3D Plant Model Right Angle View" onclick="openLightbox(this)" style="width: 100%; height: 100%; object-fit: contain; cursor: pointer;">
+                    <div style="position: absolute; bottom: 0; left: 0; right: 0; background: rgba(15,23,42,0.75); color: white; font-size: 11px; padding: 4px 8px; font-weight: 500; pointer-events: none;">Isometric Routing Profile - View B</div>
+                </div>
+            </div>
+            <ul class="bullet-list">
+                <li>Developed complex 3D plant assemblies incorporating interconnected pipeline loops, pressure vessels, structural foundations, and equipment support anchors.</li>
+                <li>Executed advanced pipe drafting, mechanical configuration design, and calculated dimensional paths for process fluids.</li>
+                <li>Applied deep working knowledge of plant equipment and international standards to specify inline pipe fittings, structural flanges, and isolation valves.</li>
+                <li>Generated detailed piping arrangement layout drawings and sizing calculation sheets using Excel data integration models.</li>
+            </ul>
+            <div class="meta-info"><b>Objective:</b> Create a comprehensive 3D industrial plant environment using CATIA V5 to map out complex pipeline routings, equipment configurations, and dimensional constraints.</div>
+            <div class="meta-info"><b>Tools Used:</b> CATIA V5 (Piping & Equipment Design), AutoCAD (2D Arrangements), Microsoft Excel (Sizing Calculations).</div>
+        </div>
+
+                <!-- Project 8: Box Jig Manufacturing -->
+        <div class="card">
+            <div class="card-header">
+                <div class="card-title">
+                    <h3>Box Jig Tooling Design & Conventional Machining</h3>
+                </div>
+                <div class="card-date">Duration: 4 months</div>
+            </div>
+
+            <!-- 2X2 PHOTOGRAPHY & BLUEPRINT GRID WITH CLICK-TO-ZOOM ENABLED -->
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 12px; margin-bottom: 20px;">
+                <div style="background: #ffffff; border-radius: 6px; overflow: hidden; border: 1px solid #e2e8f0; height: 180px; position: relative;">
+                    <img src="images/box-jig-front.jpg" alt="Machined Box Jig Front Assembly View" onclick="openLightbox(this)" style="width: 100%; height: 100%; display: block; object-fit: contain; cursor: pointer; background: #f8fafc;" title="Click to view full screen">
+                    <div style="position: absolute; bottom: 0; left: 0; right: 0; background: rgba(15,23,42,0.85); color: white; font-size: 11px; padding: 6px 8px; font-weight: 500; pointer-events: none;">Machined Prototype - Front View</div>
+                </div>
+                <div style="background: #ffffff; border-radius: 6px; overflow: hidden; border: 1px solid #e2e8f0; height: 180px; position: relative;">
+                    <img src="images/box-jig-internal.jpg" alt="Machined Box Jig Internal Cavity" onclick="openLightbox(this)" style="width: 100%; height: 100%; display: block; object-fit: contain; cursor: pointer; background: #f8fafc;" title="Click to view full screen">
+                    <div style="position: absolute; bottom: 0; left: 0; right: 0; background: rgba(15,23,42,0.85); color: white; font-size: 11px; padding: 6px 8px; font-weight: 500; pointer-events: none;">Machined Prototype - Internal Cavity</div>
+                </div>
+                <div style="background: #ffffff; border-radius: 6px; overflow: hidden; border: 1px solid #e2e8f0; height: 180px; position: relative;">
+                    <img src="images/box-jig-sheet1.jpg" alt="Component Layout Blueprint Sheet" onclick="openLightbox(this)" style="width: 100%; height: 100%; display: block; object-fit: contain; cursor: pointer; background: #ffffff;" title="Click to view full screen">
+                    <div style="position: absolute; bottom: 0; left: 0; right: 0; background: rgba(15,23,42,0.85); color: white; font-size: 11px; padding: 6px 8px; font-weight: 500; pointer-events: none;">Component Layout Blueprint</div>
+                </div>
+                <div style="background: #ffffff; border-radius: 6px; overflow: hidden; border: 1px solid #e2e8f0; height: 180px; position: relative;">
+                    <img src="images/box-jig-section.jpg" alt="Assembly Cross-Section Blueprint View" onclick="openLightbox(this)" style="width: 100%; height: 100%; display: block; object-fit: contain; pointer-events: auto; cursor: pointer; background: #ffffff;" title="Click to view full screen">
+                    <div style="position: absolute; bottom: 0; left: 0; right: 0; background: rgba(15,23,42,0.85); color: white; font-size: 11px; padding: 6px 8px; font-weight: 500; pointer-events: none;">Section Cut & Bill of Materials</div>
+                </div>
+            </div>
+
+            <ul class="bullet-list">
+                <li>Collaborated within an engineering group to complete the end-to-end design layout and physical manufacturing steps for a rigid industrial tooling jig.</li>
+                <li>Operated conventional manufacturing toolsets, executing high-precision lathe turn operations and manual milling setups to hold strict geometric tolerances.</li>
+                <li>Conducted structured physical assembly fit checks to confirm correct alignment interfaces between components and internal dowel positioning tracks.</li>
+                <li>Drafted multi-sheet manufacturing-ready 2D drawings in SolidWorks detailing complete component geometries, section cut profiles, and detailed itemized material hardware registries.</li>
+            </ul>
+            <div class="meta-info"><b>Objective:</b> Design and execute the conventional machining, precision manufacturing, and mechanical verification of an operational industrial box jig tooling assembly.</div>
+            <div class="meta-info"><b>Tools Used:</b> SolidWorks (Drafting & Assembly Prints), Conventional Lathe Turning, Industrial Milling Equipment, Precision Measurement Gauges.</div>
+
+            <!-- REUSABLE FULL SCREEN INTERACTIVE MODAL COMPONENT -->
+            <div id="portfolioLightbox" style="display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(15, 23, 42, 0.95); z-index: 9999; justify-content: center; align-items: center; cursor: zoom-out;" onclick="closeLightbox()">
+                <span style="position: absolute; top: 20px; right: 30px; color: #ffffff; font-size: 36px; font-weight: bold; cursor: pointer; user-select: none;">&times;</span>
+                <img id="lightboxTargetImg" src="" alt="Zoomed Blueprint View" style="max-width: 90%; max-height: 85%; object-fit: contain; border-radius: 4px; box-shadow: 0 25px 50px -12px rgba(0,0,0,0.5);">
+                <div id="lightboxCaption" style="position: absolute; bottom: 30px; color: #e2e8f0; font-size: 15px; font-weight: 500; text-align: center; max-width: 80%; background: rgba(30,41,59,0.8); padding: 8px 16px; border-radius: 20px;"></div>
+            </div>
+
+            <script>
+            function openLightbox(imgElement) {
+                var modal = document.getElementById('portfolioLightbox');
+                var modalImg = document.getElementById('lightboxTargetImg');
+                var caption = document.getElementById('lightboxCaption');
+                
+                modal.style.display = "flex";
+                modalImg.src = imgElement.src;
+                caption.innerHTML = imgElement.alt;
+            }
+            function closeLightbox() {
+                document.getElementById('portfolioLightbox').style.display = "none";
+            }
+            </script>
+        </div>
+                <!-- Project 9: Plate Jig -->
+        <div class="card">
+            <div class="card-header">
+                <div class="card-title">
+                    <h3>Plate Jig Assembly Tooling & GD&T Sheet Engineering</h3>
+                </div>
+                <div class="card-date">Drawing No: 24-110</div>
+            </div>
+
+            <!-- ZOOMED-OUT MODEL VIEWPORT CONTAINER WITH CLICK-TO-ZOOM -->
+            <div style="margin-bottom: 20px; border-radius: 6px; overflow: hidden; border: 1px solid #e2e8f0; height: 420px; background: #ffffff;">
+                <img src="images/plate-jig-blueprint.jpg" alt="SolidWorks Plate Jig Assembly Engineering Print Sheet" onclick="openLightbox(this)" style="width: 100%; height: 100%; display: block; object-fit: contain; cursor: pointer;" title="Click to view full screen">
+            </div>
+
+            <ul class="bullet-list">
+                <li>Engineered a fully detailed multi-view industrial plate jig assembly sheet featuring top layouts, auxiliary alignment cross-sections, and clear isometric design visualizations.</li>
+                <li>Applied rigorous Geometric Dimensioning and Tolerancing (GD&T) principles, specifying strict linear tolerance limits (±0.05 mm) across critical locating feature holes and sliding alignment plate centers.</li>
+                <li>Constructed a complete engineering Bill of Materials (BOM), sourcing hardened steel drill bushings, 304 stainless locating pins, adjusting head screws, and standard component hardware.</li>
+                <li>Integrated hardware modification tracking logs, including specific component sizing adjustments and callouts for specialized commercial off-the-shelf components.</li>
+            </ul>
+            <div class="meta-info"><b>Objective:</b> Convert a multi-part production tooling concept into a manufacturing-ready, fully dimensioned assembly drawing with comprehensive tolerances, clear section layouts, and standard hardware registries.</div>
+            <div class="meta-info"><b>Tools Used:</b> SolidWorks (Detailing, Assemblies, Bill of Materials Generation, Geometric Dimensioning & Tolerancing Engine).</div>
+        </div>
+
+                <!-- Project 10: Channel Jig -->
+        <div class="card">
+            <div class="card-header">
+                <div class="card-title">
+                    <h3>Channel Jig Assembly Tooling & Multi-View Production Detailing</h3>
+                </div>
+                <div class="card-date">Drawing No: 24-220</div>
+            </div>
+
+            <!-- ZOOMED-OUT MODEL VIEWPORT CONTAINER WITH CLICK-TO-ZOOM -->
+            <div style="margin-bottom: 20px; border-radius: 6px; overflow: hidden; border: 1px solid #e2e8f0; height: 420px; background: #ffffff;">
+                <img src="images/channel-jig-blueprint.jpg" alt="SolidWorks Channel Jig Manufacturing Drawing Sheet" onclick="openLightbox(this)" style="width: 100%; height: 100%; display: block; object-fit: contain; cursor: pointer;" title="Click to view full screen">
+            </div>
+
+            <ul class="bullet-list">
+                <li>Engineered a comprehensive engineering drawing for a manufacturing channel jig, detailing primary profile projections, multi-tier hidden lines, and an explicit Section C-C structural break.</li>
+                <li>Specified highly precise secondary operations callouts, including detailed instructions for "drill and ream" procedures to establish tight dimensional fits (±0.003") for locating pins and press-fit drill bushings.</li>
+                <li>Mapped out clean assembly stack-up relationships with clear structural annotations, ensuring proper component identification across the built-in sheet Bill of Materials (BOM).</li>
+                <li>Calculated critical datum dimensioning schemes utilizing structural steel channel bases (AISI 1020), hardened tool-steel drill bushings, 304 stainless steel foolproof alignment pins, and custom thumb screws.</li>
+            </ul>
+            <div class="meta-info"><b>Objective:</b> Generate an industry-standard, multi-view tooling print for an automated assembly alignment fixture that clearly maps secondary precision machining instructions, localized assembly dimensions, and total raw component traceability parameters.</div>
+            <div class="meta-info"><b>Tools Used:</b> SolidWorks (Detailing, Mechanical Modeling, Assembly Views, Stack-Up Tolerance Analysis).</div>
+        </div>
+
+                <!-- Project 11: Modular Fixture Table -->
+        <div class="card">
+            <div class="card-header">
+                <div class="card-title">
+                    <h3>Modular Fixture Table Structural Layout & Pattern Design</h3>
+                </div>
+                <div class="card-date">Drawing No: MF12-34</div>
+            </div>
+
+            <!-- ZOOMED-OUT MODEL VIEWPORT CONTAINER WITH CLICK-TO-ZOOM -->
+            <div style="margin-bottom: 20px; border-radius: 6px; overflow: hidden; border: 1px solid #e2e8f0; height: 420px; background: #ffffff;">
+                <img src="images/modular-fixture-blueprint.jpg" alt="SolidWorks Modular Fixture Table Engineering Sheet" onclick="openLightbox(this)" style="width: 100%; height: 100%; display: block; object-fit: contain; cursor: pointer;" title="Click to view full screen">
+            </div>
+
+            <ul class="bullet-list">
+                <li>Designed a heavy-duty industrial modular fixture table assembly utilizing structural square tubing framework and precision gusset reinforcing brackets.</li>
+                <li>Created an extensive 2.00" x 2.00" grid hole pattern layout across a thick 6061 Aluminum Alloy top plate, incorporating explicit detail views (Detail A at 1:8 Scale) to define accurate margin offsets.</li>
+                <li>Generated a complete manufacturing cut list and Bill of Materials, specifying explicit structural member dimensions, itemized lengths, and material selections (AISI 1020 and 6061 Alloy).</li>
+                <li>Applied industry-standard geometric and linear tolerances (Fractional ±1/32", Angular ±0.5°) to manage weldment distortion and ensure a perfectly level work surface.</li>
+            </ul>
+            <div class="meta-info"><b>Objective:</b> Engineering a structural workspace fixture assembly complete with detailed component cut lists, complex grid patterns, and multi-view configurations to support repeatable manufacturing setups.</div>
+            <div class="meta-info"><b>Tools Used:</b> SolidWorks (Weldment Design, Feature Patterning, Detail Scaling, Custom Bill of Materials Assemblies).</div>
+        </div>
+
+                <!-- Project 12: Transfer Fixture -->
+        <div class="card">
+            <div class="card-header">
+                <div class="card-title">
+                    <h3>Transfer Fixture Assembly, Sectioning & Revision Tracking</h3>
+                </div>
+                <div class="card-date">Drawing No: W2-10</div>
+            </div>
+
+            <!-- ZOOMED-OUT MODEL VIEWPORT CONTAINER WITH CLICK-TO-ZOOM -->
+            <div style="margin-bottom: 20px; border-radius: 6px; overflow: hidden; border: 1px solid #e2e8f0; height: 420px; background: #ffffff;">
+                <img src="images/transfer-fixture-blueprint.jpg" alt="SolidWorks Transfer Fixture Engineering Print Sheet" onclick="openLightbox(this)" style="width: 100%; height: 100%; display: block; object-fit: contain; cursor: pointer;" title="Click to view full screen">
+            </div>
+
+            <ul class="bullet-list">
+                <li>Engineered a detailed mechanical transfer fixture assembly comprising a heavy machined converter base (AISI 1020) and a formed sheet metal mounting plate (ASTM A36).</li>
+                <li>Generated precise full Section A-A internal cuts to detail varying blind counterbore depths, pocket offsets, and precision clearances.</li>
+                <li>Specified strict internal thread configurations including tapped hole callouts (1/4-20 UNC and 8-32 UNC) along with standard flat sheet metal bend allowances ("DOWN 90° R .1").</li>
+                <li>Implemented formal engineering change order logging, documenting drawing updates, chamfer variable updates, validation dates, and total version control tracking.</li>
+            </ul>
+            <div class="meta-info"><b>Objective:</b> Engineering a multi-component positioning fixture print that maps precise internal cross-section parameters, complex threaded fastener holes, sheet metal bend profiles, and strict revision control histories.</div>
+            <div class="meta-info"><b>Tools Used:</b> SolidWorks (Detailing, Section Profiling, Component Assemblies, Engineering Change Notice Configuration).</div>
+        </div>
+
+                <!-- Project 13: Transfer Sub-Assembly -->
+        <div class="card">
+            <div class="card-header">
+                <div class="card-title">
+                    <h3>Transfer Sub-Assembly Layout & Machined Component Detailing</h3>
+                </div>
+                <div class="card-date">Drawing No: P-23-112</div>
+            </div>
+
+            <!-- ZOOMED-OUT MODEL VIEWPORT CONTAINER WITH CLICK-TO-ZOOM -->
+            <div style="margin-bottom: 20px; border-radius: 6px; overflow: hidden; border: 1px solid #e2e8f0; height: 420px; background: #ffffff;">
+                <img src="images/transfer-sub-assembly-blueprint.jpg" alt="Sheridan College Transfer Sub-Assembly Engineering Drawing Sheet" onclick="openLightbox(this)" style="width: 100%; height: 100%; display: block; object-fit: contain; cursor: pointer;" title="Click to view full screen">
+            </div>
+
+            <ul class="bullet-list">
+                <li>Engineered a complex multi-part sub-assembly print detailing a heavy 1.000" thick locating plate (A36), a machined cylindrical shaft (Cold Rolled Steel), and an internal retention ring (1020).</li>
+                <li>Developed complete auxiliary sectional profiles (Section A-A and Section B-B) to illustrate blind multi-hole patterns, precise fastener clearances, and flange alignment recesses.</li>
+                <li>Detailed intricate secondary machining operations on individual sub-components, including stepped shaft shoulder turnings, cross-drilled pin profiles, and localized flat-mill steps.</li>
+                <li>Maintained high-visibility engineering revision tables, formalizing specific dimensional chamfer upgrades, strict verification logging, and timeline version controls.</li>
+            </ul>
+            <div class="meta-info"><b>Objective:</b> Generate an standard sub-assembly production print that explicitly details deep cross-sectional part stacks, individual component machining callouts, hole pattern arrays, and active revision tracking logs.</div>
+            <div class="meta-info"><b>Tools Used:</b> SolidWorks / AutoCAD (Sub-Assembly Modeling, Auxiliary Sectioning, Complex Fastener Tolerances).</div>
+        </div>
+
+                <!-- Project 14: Holder Component -->
+        <div class="card">
+            <div class="card-header">
+                <div class="card-title">
+                    <h3>Machined Holder Component Detailing & Internal Sectioning</h3>
+                </div>
+                <div class="card-date">Drawing No: A6</div>
+            </div>
+
+            <!-- ZOOMED-OUT MODEL VIEWPORT CONTAINER WITH CLICK-TO-ZOOM -->
+            <div style="margin-bottom: 20px; border-radius: 6px; overflow: hidden; border: 1px solid #e2e8f0; height: 420px; background: #ffffff;">
+                <img src="images/holder-blueprint.jpg" alt="Sheridan College Holder Component Engineering Drawing Sheet" onclick="openLightbox(this)" style="width: 100%; height: 100%; display: block; object-fit: contain; cursor: pointer;" title="Click to view full screen">
+            </div>
+
+            <ul class="bullet-list">
+                <li>Engineered a production-ready fabrication print for a heavy machined Mild Steel holder component, utilizing a clean primary profile projection paired with an offset Section A-A cross-section cut.</li>
+                <li>Specified highly precise internal transmission geometry features, including a standard 1/8" x 1/16" drive keyway slot to ensure a locked mechanical alignment on rotating power shafts.</li>
+                <li>Detailed deep concentric internal features, managing multi-tier counterbore diameters (Ø1.375" and Ø1.875") along with a transverse cross-drilled Ø0.250" precision pin hole.</li>
+                <li>Integrated critical secondary shop floor manufacturing processing constraints, incorporating high-visibility quality control instructions ("NOTE: DEBURR ALL EDGES") to eliminate stress risers and sharp flashing.</li>
+            </ul>
+            <div class="meta-info"><b>Objective:</b> Generate an industry-standard component manufacturing print that explicitly details precise concentric internal profiles, keyed power-transmission slots, auxiliary section cuts, and clear post-machining finishing instructions.</div>
+            <div class="meta-info"><b>Tools Used:</b> SolidWorks / AutoCAD (Parametric Modeling, Keyway Slot Broaching Configurations, Concentric Sectioning, Precision Tolerance Allocation).</div>
+        </div>
+
+        <!-- Project 15: Block Component -->
+        <div class="card">
+            <div class="card-header">
+                <div class="card-title">
+                    <h3>Malleable Iron Block Component — Complex Multi-Axis Sectioning</h3>
+                </div>
+                <div class="card-date">Drawing No: 26463</div>
+            </div>
+
+            <!-- ZOOMED-OUT MODEL VIEWPORT CONTAINER WITH CLICK-TO-ZOOM -->
+            <div style="margin-bottom: 20px; border-radius: 6px; overflow: hidden; border: 1px solid #e2e8f0; height: 420px; background: #ffffff;">
+                <img src="images/block-component-blueprint.jpg" alt="Parth Patel Project 1 Block Component Engineering Drawing Sheet" onclick="openLightbox(this)" style="width: 100%; height: 100%; display: block; object-fit: contain; cursor: pointer;" title="Click to view full screen">
+            </div>
+
+            <ul class="bullet-list">
+                <li>Engineered a production-ready fabrication print for a complex structural block component using a multi-view configuration comprising top, front, and left side orthographic projections.</li>
+                <li>Developed precise internal multi-axis cross-section views (Section A-A longitudinal cut and Section B-B transverse cut) to define hidden slots, counterbores, and rib profiles.</li>
+                <li>Applied standardized structural casting and molding constraints, specifying uniform material radii and filleting parameters (R0.10) to optimize stress distribution and molten flow profiles for a Malleable Iron material layout.</li>
+                <li>Integrated complete professional title block infrastructure, documenting student ID ownership, 1:1 scaling precision verification, release-for-production change logs, and imperial unit configurations.</li>
+            </ul>
+            <div class="meta-info"><b>Objective:</b> Generate an industry-standard, fully dimensioned component drawing that completely maps complex geometric interior chambers, custom reinforcement ribs, dual-axis section cuts, and formal engineering documentation criteria.</div>
+            <div class="meta-info"><b>Tools Used:</b> SolidWorks / AutoCAD (Orthographic Projections, Geometric Feature Allocation, Advanced Multi-Sectioning Views, Casting Allowance Logic).</div>
+        </div>
+
+        <!-- Project 16: Cross Head Assembly -->
+        <div class="card">
+            <div class="card-header">
+                <div class="card-title">
+                    <h3>Cross Head Assembly — Multi-Sheet Industrial Drafting Package</h3>
+                </div>
+                <div class="card-date">Drawing Series: C-00 to C-05</div>
+            </div>
+            <div style="margin-bottom: 20px; border-radius: 6px; overflow: hidden; border: 1px solid #e2e8f0; background: white;">
+                <img src="images/cross-head-package.jpg" alt="Parth Patel Cross Head Assembly Multi-Sheet Engineering Drawing Package" onclick="openLightbox(this)" style="width: 100%; height: auto; display: block; object-fit: contain; cursor: pointer;">
+            </div>
+            <ul class="bullet-list">
+                <li>Engineered a full 6-sheet industrial production drawing package for a mechanical cross head mechanism, mapping out complete component interactions, assembly fits, and individual part geometries.</li>
+                <li>Developed the primary multi-view assembly sheet (Drawing No. C-00) incorporating localized cross-sections, 3D exploded alignments, and a comprehensive engineering Bill of Materials (BOM) specifying component hierarchy and steel material listings.</li>
+                <li>Generated detailed individual manufacturing sub-sheets for precision components, including the main mechanism housing Body (C-001), rigid Keep Plate (C-002), machined Piston Rod (C-003), split Brasses journal bearings (C-004), and heavy-duty retaining Bolts (C-005).</li>
+                <li>Applied consistent manufacturing annotations across all drawing sheets, enforcing uniform surface finishing constraints ("ALL SURFACE FINISH IS N7") and tight dimensional clearance tolerances to ensure field interchangeability.</li>
+            </ul>
+            <div class="meta-info"><b>Objective:</b> Deliver a complete multi-sheet engineering drawing package that translates a multi-body mechanical system into structured, production-ready part detailing blueprints, detailed Bill of Materials tables, and clear exploded assembly layouts.</div>
+            <div class="meta-info"><b>Tools Used:</b> SolidWorks / AutoCAD (Advanced Assembly Detailing, Exploded Presentations, Component Print Sectioning, Manufacturing Surface Texture Control).</div>
+        </div>
+        <!-- Project 17: Wrench Block -->
+        <div class="card">
+            <div class="card-header">
+                <div class="card-title">
+                    <h3>Wrench Block Component — Industrial Tooling Clamping Design</h3>
+                </div>
+                <div class="card-date">Drawing No: 3569</div>
+            </div>
+
+            <!-- ZOOMED-OUT MODEL VIEWPORT CONTAINER WITH CLICK-TO-ZOOM -->
+            <div style="margin-bottom: 20px; border-radius: 6px; overflow: hidden; border: 1px solid #e2e8f0; height: 420px; background: #ffffff;">
+                <img src="images/wrench-block-blueprint.jpg" alt="Parth Patel Wrench Block Component Engineering Drawing Sheet" onclick="openLightbox(this)" style="width: 100%; height: 100%; display: block; object-fit: contain; cursor: pointer;" title="Click to view full screen">
+            </div>
+
+            <ul class="bullet-list">
+                <li>Engineered a fully detailed production blueprint for an industrial wrench block component, incorporating top, front, and side orthographic projections paired with a high-fidelity 3D shaded isometric visualization.</li>
+                <li>Designed a high-torque mechanical split-clamp collar interface, detailing specific clearance gaps, localized concentric shoulder radiuses (R50 and R32), and key transverse alignment through-holes (Ø12) for heavy-duty fasteners.</li>
+                <li>Applied rigorous dual-unit metric dimensioning schemes (MM) across all critical offsets, controlling asymmetric feature centers, structural link bosses, and mating pivot pin bores (Ø25).</li>
+                <li>Established critical shop floor manufacturing and engineering design governance parameters, incorporating explicit quality control notes to specify matte texturing, structural finish guidelines ("ALL SURFACE FINISHES RMS32"), and data authority protocols ("3D CAD IS MASTER FILE").</li>
+            </ul>
+            <div class="meta-info"><b>Objective:</b> Generate an industry-standard, metric component drawing that completely maps complex asymmetric geometries, precision mechanical clamping interfaces, concentric multi-diameter hinge collars, and formal manufacturing notes.</div>
+            <div class="meta-info"><b>Tools Used:</b> SolidWorks / AutoCAD (Parametric Component Modeling, Geometric Layout Detailing, Clamping Feature Design, Surface Quality Metrics).</div>
+        </div>
+
+        <!-- Project 18: 3D House Model -->
+        <div class="card">
+            <div class="card-header">
+                <div class="card-title">
+                    <h3>3D Residential Architectural Modeling & Landscaping Design</h3>
+                </div>
+                <div class="card-date">CAD Portfolio Project</div>
+            </div>
+
+            <!-- ZOOMED-OUT MODEL VIEWPORT CONTAINER WITH CLICK-TO-ZOOM -->
+            <div style="margin-bottom: 20px; border-radius: 6px; overflow: hidden; border: 1px solid #e2e8f0; height: 460px; background: #1e1e1e;">
+                <img src="images/3d-house-model.jpg" alt="3D Residential Architectural Model and Landscaping Layout" onclick="openLightbox(this)" style="width: 100%; height: 100%; display: block; object-fit: contain; cursor: pointer;" title="Click to view full screen">
+            </div>
+
+            <ul class="bullet-list">
+                <li>Constructed a complete 3D parametric architectural model of a multi-level residential home, designing complex roof geometry pitches, multi-tier wall boundaries, and custom structural chimney features.</li>
+                <li>Mapped out accurate multi-axis spatial relationships to model structural windows, detailed frame inset trim, garage alcoves, and functional front patio walkway entries.</li>
+                <li>Integrated stylized environmental and site layout detailing assets, incorporating custom patterned textures and vector-mapped landscaping bush clusters along the perimeter foundations.</li>
+                <li>Leveraged isometric projection viewports and geometric rendering configurations to effectively evaluate real-world design scale, material contrasts, and spatial proportions.</li>
+            </ul>
+            <div class="meta-info"><b>Objective:</b> Convert basic multi-view architectural floor plans into a unified, high-fidelity 3D structural model complete with realistic site landscaping assets, proper spatial proportions, and clear material rendering visualizations.</div>
+            <div class="meta-info"><b>Tools Used:</b> AutoCAD / SolidWorks (3D Modeling Workspace, Parametric Extrusions, Component Assembly Alignments, Site Layout Vectoring).</div>
+        </div>
+
+        
+        <!-- TECHNICAL DRAFTING GALLERY QUICK VIEWS -->
+        <h3 style="color: #0f172a; margin-top: 40px; margin-bottom: 10px; font-size: 19px; border-bottom: 1px dashed #cbd5e1; padding-bottom: 8px;">Technical Drafting & Modeling Portfolio</h3>
+        <div class="gallery-grid">
+            <div class="gallery-card">Industrial Belt Conveyor Systems (30 kW)</div>
+            <div class="gallery-card">Box Jig Precision Machining</div>
+            <div class="gallery-card">SolidWorks Plate & Channel Jigs</div>
+            <div class="gallery-card">AutoCAD 2D Transfer Sub-Assemblies</div>
+            <div class="gallery-card">3D Industrial Piping Plant Layouts</div>
+            <div class="gallery-card">AutoCAD 3D Cross Head Assemblies</div>
+        </div>
+    </div>
+</div> <!-- CLOSES THE MAIN CONTAINER CLASS -->
+
+<!-- FOOTER / CONTACT CONTACT -->
+<div class="contact-container">
+    <h2>Connect With Me</h2>
+    <p>Let's discuss design, validation, or future engineering collaborations.</p>
+    <div class="contact-links">
+        <a href="mailto:parthpatel1327@gmail.com">Email Me</a>
+        <a href="https://linkedin.com" target="_blank">LinkedIn Profile</a>
+    </div>
+</div>
+<!-- APP LIGHTBOX & NAVIGATION ENGINE -->
+<script>
+function switchView(viewId) {
+    const sections = document.querySelectorAll('.portfolio-section');
+    sections.forEach(sec => sec.classList.remove('active-view'));
+    const tabs = document.querySelectorAll('nav ul li');
+    tabs.forEach(tab => tab.classList.remove('active-tab'));
+    document.getElementById('view-' + viewId).classList.add('active-view');
+    document.getElementById('tab-' + viewId).classList.add('active-tab');
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+}
+
+function openLightbox(imgElement) {
+    var modal = document.getElementById('portfolioLightbox');
+    var modalImg = document.getElementById('lightboxTargetImg');
+    var caption = document.getElementById('lightboxCaption');
+    modal.style.display = "flex";
+    modalImg.src = imgElement.src;
+    caption.innerHTML = imgElement.alt;
+}
+
+function closeLightbox() {
+    document.getElementById('portfolioLightbox').style.display = "none";
+}
+</script>
+
+<!-- REUSABLE DYNAMIC LIGHTBOX CONTAINER -->
+<div id="portfolioLightbox" style="display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(15, 23, 42, 0.95); z-index: 9999; justify-content: center; align-items: center; cursor: zoom-out;" onclick="closeLightbox()">
+    <span style="position: absolute; top: 20px; right: 30px; color: #ffffff; font-size: 36px; font-weight: bold; cursor: pointer; user-select: none;">&times;</span>
+    <img id="lightboxTargetImg" src="" alt="Zoomed View" style="max-width: 90%; max-height: 85%; object-fit: contain; border-radius: 4px; box-shadow: 0 25px 50px -12px rgba(0,0,0,0.5);">
+    <div id="lightboxCaption" style="position: absolute; bottom: 30px; color: #e2e8f0; font-size: 15px; font-weight: 500; text-align: center; max-width: 80%; background: rgba(30,41,59,0.8); padding: 8px 16px; border-radius: 20px; pointer-events: none;"></div>
 </div>
 
-<!-- TECHNICAL SKILLS -->
-<div id="skills" class="section">
-    <h2>Technical Skills</h2>
-    <div class="skills-container">
-        <ul>
-            <li><b>CAD Software & Design Tools:</b> SolidWorks, Creo 4.0, AutoCAD, Catia V5, Inventor, 3Ds Max, Master Cam</li>
-            <li><b>Engineering Methods & Analysis:</b> Geometric Dimensioning & Tolerancing (GD&T), Tolerance Stack-up Analysis, Clearance Studies, Design Verification Plan & Report (DVP&R), Failure Mode and Effects Analysis (FMEA), Root Cause Analysis</li>
-            <li><b>Data Acquisition (DAQ) & Automation:</b> Somat eDAQ Hardware, Somat Infield Software, Automation System Integration, Process Automation Tools</li>
-            <li><b>Quality & Auditing Frameworks:</b> Layered Process Audits (LPA), Compliance Auditing, Component Traceability Systems (QR Code-Based Verification), ISO Standards Compliance, Lab Audits</li>
-            <li><b>Manufacturing & Process Engineering:</b> Piping and Instrumentation Diagrams (P&ID), Bill of Materials (BOM) Validation, Engineering Routing Documents (ERD), Time Studies, Workflow Optimization, Tooling/Fixture Design (V-Blocks, Custom Brackets, Catch Bars), Repair & Rework Procedures</li>
-            <li><b>PLM & Enterprise Platforms (ERP):</b> Windchill, AS400, MobileAsset (Inventory Tool), TutorOcean</li>
-            <li><b>Project Management & Collaboration:</b> MS Project, MS Office Suite, Cross-Functional Team Leadership, Technical Lesson Planning</li>
-        </ul>
-    </div>
-</div>
-
-<!-- PROFESSIONAL EXPERIENCE -->
-<div id="experience" class="section">
-    <h2>Professional Experience</h2>
+<!-- CLIENT APPLICATION INTERFACE SWITCHER SCRIPT -->
+<script>
+function switchView(viewId) {
+    const sections = document.querySelectorAll('.portfolio-section');
+    sections.forEach(sec => sec.classList.remove('active-view'));
     
-    <!-- SKYJACK -->
-    <div class="card">
-        <div class="card-header">
-            <div class="card-title">
-                <h3>Design & Validation Engineering Co-op</h3>
-                <div class="card-subtitle">SKYJACK | Guelph, ON</div>
-            </div>
-            <div class="card-date">Jan 2025 – May 2025 /<br>Jan 2026 – Apr 2026</div>
-        </div>
-        <ul>
-            <li>Designed custom test support equipment including stabilizing catch bars for scissor lift MEWPs and specialized brackets used to mount sensors and testing hardware using SolidWorks and TCE.</li>
-            <li>Collected and analyzed real-time structural validation test data using Somat eDAQ hardware and Somat Infield software to evaluate machine stability, system performance, and component durability.</li>
-            <li>Set up and calibrated test equipment, including new angle and displacement sensors, conducted cyclic increment force testing to analyze tire stiffness, and drafted detailed technical Work Instructions to ensure accurate, repeatable validation procedures.</li>
-            <li>Worked cross-functionally with design, manufacturing, and quality teams to develop and fabricate custom test tooling to support structural validation and North American safety standards compliance.</li>
-            <li>Engineered and implemented an automatic data processing tool to streamline Tire Press testing results, eliminating manual processing and significantly reducing lead times for stability reports.</li>
-            <li>Managed the Global Master Tracker and Priority Tracker to provide progress updates and update Design Verification Plans as requested by global engineering management.</li>
-            <li>Conducted monthly laboratory equipment audits and developed a weekly tracking system for tool usage across multi-disciplinary engineering teams to ensure equipment availability and calibration compliance.</li>
-        </ul>
-    </div>
+    const tabs = document.querySelectorAll('nav ul li');
+    tabs.forEach(tab => tab.classList.remove('active-tab'));
+    
+    document.getElementById('view-' + viewId).classList.add('active-view');
+    document.getElementById('tab-' + viewId).classList.add('active-tab');
+    
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+}
+</script>
 
-    <!-- SHERIDAN RESEARCH -->
-    <div class="card">
-        <div class="card-header">
-            <div class="card-title">
-                <h3>Research Assistant – Liquid-Liquid Extraction Project (NSERC Funded)</h3>
-                <div class="card-subtitle">SHERIDAN COLLEGE – CENTRE FOR INTELLIGENT MANUFACTURING | Brampton, ON</div>
-            </div>
-            <div class="card-date">Sep 2024 – Nov 2024</div>
-        </div>
-        <ul>
+</body>
+</html>
